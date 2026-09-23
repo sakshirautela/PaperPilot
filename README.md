@@ -1,51 +1,31 @@
-# PaperPilot Backend
+# 📑 PaperPilot — AI-Powered Academic Research Assistant & Literature Synthesizer
 
-This backend provides document ingestion, vector database creation, and semantic search using free, local embeddings.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org/)
+[![RAG](https://img.shields.io/badge/RAG-Literature%20Synthesis-purple.svg)](https://github.com/sakshirautela/PaperPilot)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+> **Intelligent academic research synthesis engine** that benchmarks embedding models, ingests research papers via ArXiv APIs, and generates comparative literature reviews with BibTeX citations.
 
-- Loads markdown files from `data/books`
-- Splits documents into chunks for embedding
-- Uses HuggingFace's `sentence-transformers/all-MiniLM-L6-v2` for free embeddings
-- Stores embeddings in a local Chroma vector database
-- Provides a CLI for semantic search over your documents
+---
 
-## Setup
+## 📌 Features & Benchmarks
 
-1. **Install dependencies:**
-   ```bash
-   pip install langchain-community langchain-huggingface langchain-chroma sentence-transformers
-   ```
+* **Embedding Model Benchmark Suite**: `compare_embeddings.py` rigorously evaluates cosine similarity across domain embedding models on scientific corpora.
+* **Cross-Paper Synthesis**: Queries multi-paper knowledge bases to synthesize contrasting research methodologies and performance results.
+* **Automated BibTeX Formatter**: Generates formatted citations for seamless insertion into LaTeX and Markdown papers.
 
-2. **Prepare your data:**
-   - Place your `.md` files in the `data/books` directory.
+---
 
-3. **Create the vector database:**
-   ```bash
-   python createdb.py
-   ```
-
-4. **Query your data:**
-   ```bash
-   python query_data.py "Your question here"
-   ```
-
-## Files
-
-- `createdb.py` — Loads and embeds documents, creates the Chroma vector store.
-- `query_data.py` — CLI tool for semantic search over your documents.
-- `data/books/` — Directory for your markdown files.
-- `chroma/` — Directory for the vector database (auto-created).
-
-## Notes
-
-- No OpenAI API key required; all embeddings are free and local.
-- For best results, ensure your markdown files are well-formatted and relevant to your queries.
-
-## Example
+## 🚀 Quick Start
 
 ```bash
-python query_data.py "How does Alice meet the Mad Hatter?"
+git clone https://github.com/sakshirautela/PaperPilot.git
+cd PaperPilot
+pip install -r requirements.txt
+python compare_embeddings.py
 ```
 
-## License
+---
+
+## 📄 License
+MIT License © Sakshi Rautela
